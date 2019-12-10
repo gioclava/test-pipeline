@@ -8,7 +8,7 @@ build:
     context: src\tictactoe
     
     docker:
-      dockerfile: src\tictactoe\DockerFile
+      dockerfile: srci\tictactoe\DockerFile
   local: {}
 deploy:
   kubectl:
