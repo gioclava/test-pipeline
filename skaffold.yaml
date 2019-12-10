@@ -1,0 +1,17 @@
+apiVersion: skaffold/v1
+kind: Config
+metadata:
+  name: test-project
+build:
+  artifacts:
+  - image: localhost:5000/my-react-app
+    context: src\tictactoe
+    
+    docker:
+      dockerfile: src\tictactoe\DockerFile
+  local: {}
+deploy:
+  kubectl:
+    manifests:
+    - src\tictactoe\deployment.yaml
+    - src\tictactoe\service.yaml
